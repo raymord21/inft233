@@ -28,27 +28,28 @@ and open the template in the editor.
                 </ul>
             </div>
         </nav>
-        <form role="form" class="col-sm-12" style="height: 300px;width:400px;">
+        <form role="form" class="col-sm-12" style="height: 300px;width:400px;" action="confirmation.php" method="post">
             <div class="form-group">
                 <label for="name">First Name</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control"  name="name">
             </div>
             <div class="form-group">
                 <label for="name">Last Name</label>
-                <input type="text" class="form-control" id="lname">
+                <input type="text" class="form-control"  name="lname">
             </div>
             <div class="form-group">
                 <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control"  name="email">
             </div>
             <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd">
+                <input type="password" class="form-control"  name="password">
+            </div>
+            <div class="col-sm-12">
+                <input class="button b-success" type="submit" value="submit">
             </div>
         </form>
-        <div class="col-sm-12">
-            <button type="button" class="btn btn-success"><a href="http://www.inft.me/~reymord/comfirmation.php" style="color: black;">Submit</a></button>
-        </div>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>

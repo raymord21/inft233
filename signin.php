@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <title>Sign In Page</title>
@@ -13,10 +14,10 @@
                     <a class="navbar-brand" href="#">WebSiteName</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="http://www.inft.me/~reymord/index.php">Home</a></li>
-                    <li><a href="http://www.inft.me/~reymord/about.php">About us</a></li>
-                    <li><a href="http://www.inft.me/~reymord/signin.php">Sign In</a></li> 
-                    <li><a href="http://www.inft.me/~reymord/registration.php">Register</a></li> 
+                    <li class="active"><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About us</a></li>
+                    <li><a href="signin.php">Sign In</a></li> 
+                    <li><a href="registration.php">Register</a></li> 
                 </ul>
             </div>
         </nav>
