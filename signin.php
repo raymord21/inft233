@@ -21,19 +21,21 @@
                 </ul>
             </div>
         </nav>
-        <form class="col-sm-12 col-push-right">
+        <form role="form" class="col-sm-12 col-push-right" action="your_site.php" method="post">
             <div class="col-sm-2 col-push-4 form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email">
+                <label for="email">Username:</label>
+                <input type="text" class="form-control" name="Custusername">
             </div>
             <div class="col-sm-2 col-push-4 form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd">
+                <input type="password" class="form-control" name="Custpassword">
             </div>
             <div class="col-sm-2" style="padding-top: 25px;">
-                <button type="button" class="btn btn-success">Submit</button>
+                 <input class="button b-success" type="submit" value="submit">
             </div>
         </form>
+       
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>

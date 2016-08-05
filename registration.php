@@ -31,11 +31,15 @@ and open the template in the editor.
         <form role="form" class="col-sm-12" style="height: 300px;width:400px;" action="confirmation.php" method="post">
             <div class="form-group">
                 <label for="name">First Name</label>
-                <input type="text" class="form-control"  name="name">
+                <input type="text" class="form-control"  name="firstname">
             </div>
             <div class="form-group">
                 <label for="name">Last Name</label>
-                <input type="text" class="form-control"  name="lname">
+                <input type="text" class="form-control"  name="lastname">
+            </div>
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control"  name="Custusername">
             </div>
             <div class="form-group">
                 <label for="email">Email address:</label>
@@ -43,7 +47,7 @@ and open the template in the editor.
             </div>
             <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control"  name="password">
+                <input type="password" class="form-control"  name="Custpassword">
             </div>
             <div class="col-sm-12">
                 <input class="button b-success" type="submit" value="submit">

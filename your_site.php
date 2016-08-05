@@ -19,7 +19,6 @@
             </ul>
         </div>
     </nav>
-
     <?php
     $servername = "localhost";
     $username = "reymord";
@@ -27,33 +26,34 @@
     $dbname = "reymord";
 
 
-// Create connection
+    // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
+    // Check connection
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
     // Escape user inputs for security
-    $firstname =$_POST['firstname'];
-    $lastname = $_POST['lastname'];
+
     $Custusername = $_POST['Custusername'];
-    
-    $email = $_POST['email'];
+    $firstname = $_POST['firstname'];
     $Custpassword = $_POST['Custpassword'];
-
-    $sql = 'INSERT INTO CUSTOMER (firstname, lastname, Custusername, email, Custpassword)'
-    . 'values (' . "\"$firstname\"" . ',' . "\"$lastname\"" . ','. "\"$Custusername\"" . ','. "\"$email\"" . ','. "\"$Custpassword\");";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+    
+    $sql = "SELECT * FROM `CUSTOMER` WHERE Custusername = '" . $Custusername . "' AND Custpassword = '" . $Custpassword . "'";
+    $result = $conn->query($sql);
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "Welcome " . $row['firstname'];
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        
+        echo "incorrect Information Go Back to Sign In page";
     }
+
 
     mysqli_close($conn);
     ?>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
