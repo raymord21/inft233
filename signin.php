@@ -24,11 +24,14 @@
         <form role="form" class="col-sm-12 col-push-right" action="your_site.php" method="post">
             <div class="col-sm-2 col-push-4 form-group">
                 <label for="email">Username:</label>
-                <input type="text" class="form-control" name="Custusername">
+                <input type="text" class="form-control" name="Custusername" required pattern="[a-z0-9]{3,25}"
+                       placeholder="e.g Jhon12" title="Must be longer than 3 letters,and smallest than 25.<br>
+                       include numbers in your Username">
             </div>
-            <div class="col-sm-2 col-push-4 form-group">
+            <div class="col-sm-2 col-push-4 form-group ">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" name="Custpassword">
+                <input type="password" class="form-control" name="Custpassword" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"
+                       title="Most have Capital letters, Numbers, and Sign(@$#%^)">
             </div>
             <div class="col-sm-2" style="padding-top: 25px;">
                  <input class="button b-success" type="submit" value="submit">

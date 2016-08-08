@@ -35,21 +35,42 @@
     }
 
     // Escape user inputs for security
-    $firstname =$_POST['firstname'];
+    $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $Custusername = $_POST['Custusername'];
-    
     $email = $_POST['email'];
-    $Custpassword = $_POST['Custpassword'];
+    $Custpassword =$_POST['Custpassword'];
+    $hash = md5(rand(0, 1000));
+    
 
-    $sql = 'INSERT INTO CUSTOMER (firstname, lastname, Custusername, email, Custpassword)'
-    . 'values (' . "\"$firstname\"" . ',' . "\"$lastname\"" . ','. "\"$Custusername\"" . ','. "\"$email\"" . ','. "\"$Custpassword\");";
+    $sql = ("INSERT INTO CUSTOMER (firstname, lastname, Custusername, email, Custpassword, hash, active)
+            Values(\"$firstname\", \"$lastname\", \"$Custusername\", \"$email\",\"$Custpassword\",\"$hash\",'0')");
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        echo "New record created successfully !<br> Please Check your ($email) and Click on the link at the bottom to Activate your Account";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+
+    $to = $email; // Send email to our user
+    $subject = 'Signup | Verification'; // Give the email a subject 
+    $message = '
+ 
+Thanks for signing up!
+Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+ 
+------------------------
+Username: ' . $Custusername . '
+Password: ' . $Custpassword . '
+------------------------
+ 
+Please click this link to activate your account:
+http://inft.me/~reymord/verify_email.php?hash=' . $hash . '
+ 
+'; // Our message above including the link
+
+    $headers = 'From:noreply@bookason.com' . "\r\n"; // Set from headers
+    mail($to, $subject, $message, $headers); // Send our email
 
     mysqli_close($conn);
     ?>

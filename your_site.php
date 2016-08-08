@@ -38,20 +38,19 @@
     $Custusername = $_POST['Custusername'];
     $firstname = $_POST['firstname'];
     $Custpassword = $_POST['Custpassword'];
-    
+
     $sql = "SELECT * FROM `CUSTOMER` WHERE Custusername = '" . $Custusername . "' AND Custpassword = '" . $Custpassword . "'";
     $result = $conn->query($sql);
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
             echo "Welcome " . $row['firstname'];
+            
         }
     } else {
-        
+
         echo "incorrect Information Go Back to Sign In page";
     }
-
-
     mysqli_close($conn);
     ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
