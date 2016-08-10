@@ -43,7 +43,7 @@ and open the template in the editor.
 
         $hash = $_GET['hash'];
         if (!$hash) {
-            echo 'Invalid approach, please use the link that has been send to your email.';
+            echo 'Invalid approach, Please use the Link that has been send to your email.';
         } else {
             $sql = "SELECT * FROM CUSTOMER WHERE hash=\"$hash\"";
             
@@ -56,7 +56,7 @@ and open the template in the editor.
                 } else {
                     
                     $activate = mysqli_query($conn, "UPDATE CUSTOMER SET active='1' WHERE hash=\"$hash\"");
-                    echo 'Your account has been activated';
+                    echo 'Your Account Has Been Activated Successfully';
                 }
             } else {
                 echo 'Link is invalid !';
